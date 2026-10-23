@@ -3,10 +3,10 @@ package model.typecontent;
 import model.AudiovisualContent;
 import model.utils.Language;
 
-public class Documental extends AudiovisualContent {
+public class Documentary extends AudiovisualContent {
   private String topic;
 
-  public Documental(
+  public Documentary(
       String title, String description, int duration, String topic, Language language) {
     super(title, description, duration, language);
     this.topic = topic;
