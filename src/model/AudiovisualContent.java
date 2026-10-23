@@ -19,6 +19,18 @@ public abstract class AudiovisualContent {
     return this.id;
   }
 
+  public String getTitle() {
+    return this.title;
+  }
+
+  public String getDescription() {
+    return this.description;
+  }
+
+  public int getDuration() {
+    return this.duration;
+  }
+
   public Language getLanguage() {
     return this.language;
   }
