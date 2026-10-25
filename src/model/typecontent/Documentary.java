@@ -12,17 +12,21 @@ public class Documentary extends AudiovisualContent {
   public Documentary(
       String title,
       String description,
+      String dateRelease,
       int duration,
-      String topic,
       Language language,
-      List<Researcher> researchers) {
-    super(title, description, duration, language);
-    this.topic = topic;
+      List<Researcher> researchers,
+      String tag) {
+    super(title, description, dateRelease, duration, language, tag);
     this.researchers = researchers;
   }
 
   public String getTopic() {
     return this.topic;
+  }
+
+  public void setTopic(String topic) {
+    this.topic = topic;
   }
 
   public void addResearch(Researcher researcher) {
@@ -51,9 +55,10 @@ public class Documentary extends AudiovisualContent {
     System.out.println("- Id: " + this.getId());
     System.out.println("- Title: " + this.getTitle());
     System.out.println("- Description: " + this.getDescription());
+    System.out.println("- Date Release: " + this.getDateRelease());
     System.out.println("- Duration: " + this.getDuration());
     System.out.println("- Language: " + this.getLanguage());
-    System.out.println("- Topic: " + this.getTopic() + "\n");
+    System.out.println("- Topic: " + this.getTag());
     System.out.println("- Researchers: ");
     showResearchers();
   }
