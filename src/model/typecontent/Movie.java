@@ -12,17 +12,23 @@ public class Movie extends AudiovisualContent {
   public Movie(
       String title,
       String description,
+      String dateRelease,
       int duration,
       String studio,
       Language language,
-      List<Actor> actors) {
-    super(title, description, duration, language);
+      List<Actor> actors,
+      String tag) {
+    super(title, description, dateRelease, duration, language, tag);
     this.studio = studio;
     this.actors = actors;
   }
 
   public String getStudio() {
     return this.studio;
+  }
+
+  public void getStudio(String studio) {
+    this.studio = studio;
   }
 
   public void addActor(Actor actor) {
@@ -51,10 +57,11 @@ public class Movie extends AudiovisualContent {
     System.out.println("- Id: " + this.getId());
     System.out.println("- Title: " + this.getTitle());
     System.out.println("- Description: " + this.getDescription());
+    System.out.println("- Description: " + this.getDateRelease());
     System.out.println("- Duration: " + this.getDuration());
     System.out.println("- Language: " + this.getLanguage());
     System.out.println("- Studio: " + this.getStudio());
-    System.out.println("- Studio: " + this.getStudio());
+    System.out.println("- Topic : " + this.getTag());
     System.out.println("- Cast: ");
     showActors();
   }
