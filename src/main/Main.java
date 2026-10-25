@@ -14,45 +14,75 @@ public class Main {
     Movie md = createMovie();
     Documentary doc = createDocumentary();
     Serie sr = createSerie();
-    showInformation(md, doc, sr);
+    ShortFilm shf = createShortFilm();
+    Interview inter = createInterview();
+    showInformation(md, doc, sr, shf, inter);
   }
 
-  public static void showInformation(Movie md, Documentary doc, Serie sr) {
+  public static void showInformation(
+      Movie md, Documentary doc, Serie sr, ShortFilm shf, Interview inter) {
     md.showInfo();
     doc.showInfo();
     sr.showInfo();
+    shf.showInfo();
+    inter.showInfo();
+  }
+
+  public static Interview createInterview() {
+    return new Interview(
+        "El ego mata",
+        "sobre el ego en las peronas mayores",
+        "10/9/2020",
+        40,
+        Language.SPANISH,
+        "Emotions",
+        "Gedardo Maquiavelo",
+        "Gustavo Navitas");
+  }
+
+  public static ShortFilm createShortFilm() {
+    List<Actor> actors = getListOfActors();
+
+    return new ShortFilm(
+        "El puercoespín",
+        "About the insolation",
+        "10/3/2013",
+        45,
+        Language.SPANISH,
+        actors,
+        false,
+        "Terror; Suspense");
   }
 
   public static Movie createMovie() {
     List<Actor> actors = getListOfActors();
 
-    Movie md =
-        new Movie(
-            "Avatar",
-            "About a guy that wants to save the worl",
-            125,
-            "Old city CR",
-            Language.SPANISH,
-            actors);
-    return md;
+    return new Movie(
+        "Avatar",
+        "About a guy that wants to save the worl",
+        "10/3/2003",
+        125,
+        "Old city CR",
+        Language.ENGLISH,
+        actors,
+        "Fantasy");
   }
 
   public static Documentary createDocumentary() {
     List<Researcher> researchers = getListOfResearchers();
-    Documentary doc =
-        new Documentary(
-            "Old Teachers",
-            "About the teacher that are very old and they still programming",
-            35,
-            "Technology",
-            Language.ENGLISH,
-            researchers);
-    return doc;
+    return new Documentary(
+        "Old Teachers",
+        "About the teacher that are very old and they still programming",
+        "11/7/2203",
+        35,
+        Language.ENGLISH,
+        researchers,
+        "Humans ");
   }
 
   public static Serie createSerie() {
-    Serie sr = new Serie("The walking dead", "Zoombies series.", 45, Language.GERMAN, 8, 10);
-    return sr;
+    return new Serie(
+        "The walking dead", "Zoombies series.", "3/8/2006", 45, Language.GERMAN, 8, 10, "Actions");
   }
 
   public static List<Actor> getListOfActors() {
