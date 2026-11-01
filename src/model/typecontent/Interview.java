@@ -1,11 +1,13 @@
 package model.typecontent;
 
 import model.AudiovisualContent;
+import model.resource.Place;
 import model.utils.Language;
 
 public class Interview extends AudiovisualContent {
   private String host;
   private String guesst;
+  private Place place;
 
   public Interview(
       String title,
@@ -13,12 +15,14 @@ public class Interview extends AudiovisualContent {
       String dateRelease,
       int duration,
       Language language,
+      Place place,
       String tag,
       String host,
       String guesst) {
     super(title, description, dateRelease, duration, language, tag);
     this.host = host;
     this.guesst = guesst;
+    this.place = place;
   }
 
   public String getHost() {
@@ -48,5 +52,7 @@ public class Interview extends AudiovisualContent {
     System.out.println("- Topic: " + this.getTag());
     System.out.println("- Host: " + this.getHost());
     System.out.println("- Guesst : " + this.getGuesst());
+    System.out.println("- Place: " + this.place.getDirection());
+    System.out.println("- City: " + this.place.getCity());
   }
 }

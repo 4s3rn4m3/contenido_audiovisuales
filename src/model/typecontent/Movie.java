@@ -27,7 +27,7 @@ public class Movie extends AudiovisualContent {
     return this.studio;
   }
 
-  public void getStudio(String studio) {
+  public void setStudio(String studio) {
     this.studio = studio;
   }
 
